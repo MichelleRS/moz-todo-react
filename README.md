@@ -1,5 +1,22 @@
 # Todo App
 
+## MVP Goal
+
+User can read a list of tasks. With a mouse or keyboard, user can:
+
+- add a task
+- mark a task as completed
+- delete a task
+- edit a task
+- filter tasks by:
+  - all
+  - active
+  - completed
+
+## Project Status
+
+- MVP in progress
+
 ## Project Setup
 
 1. Create a directory in terminal and move into directory
