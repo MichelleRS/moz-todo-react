@@ -1,6 +1,15 @@
 import Todo from "./components/Todo.js";
 
-function App() {
+function App(props) {
+  // get tasks data from index.js
+  const taskList = props.tasks.map((task) => (
+    <Todo
+      key={task.id}
+      id={task.id}
+      name={task.name}
+      completed={task.completed}
+    />
+  ));
   return (
     <main>
       <h1>Todo App</h1>
@@ -39,12 +48,7 @@ function App() {
         <h2>Tasks to Complete</h2>
         {/* list of tasks: list item with checkbox and update buttons */}
         <ul role="list" aria-labelledby="list-heading">
-          {/* task 1 */}
-          <Todo name="Groceries" id="todo-0" completed={true} />
-          {/* task 2 */}
-          <Todo name="Laundry" id="todo-1" completed={false} />
-          {/* task 3 */}
-          <Todo name="Sweep" id="todo-2" completed={false} />
+          {taskList}
         </ul>
       </form>
     </main>
