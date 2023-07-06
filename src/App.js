@@ -1,3 +1,5 @@
+import Todo from "./components/Todo.js";
+
 function App() {
   return (
     <main>
@@ -38,56 +40,11 @@ function App() {
         {/* list of tasks: list item with checkbox and update buttons */}
         <ul role="list" aria-labelledby="list-heading">
           {/* task 1 */}
-          <li>
-            {/* checkbox */}
-            <div>
-              <input type="checkbox" id="todo-0" defaultChecked={true} />
-              <label htmlFor="todo-0">Groceries</label>
-            </div>
-            {/* update buttons: edit, delete */}
-            <div>
-              <button type="button">
-                Edit <span className="visually-hidden">Groceries</span>
-              </button>
-              <button type="button">
-                Delete <span className="visually-hidden">Groceries</span>
-              </button>
-            </div>
-          </li>
+          <Todo name="Groceries" id="todo-0" completed={true} />
           {/* task 2 */}
-          <li>
-            {/* checkbox */}
-            <div>
-              <input type="checkbox" id="todo-1" />
-              <label htmlFor="todo-1">Laundry</label>
-            </div>
-            {/* update buttons: edit, delete */}
-            <div>
-              <button type="button">
-                Edit <span className="visually-hidden">Laundry</span>
-              </button>
-              <button type="button">
-                Delete <span className="visually-hidden">Laundry</span>
-              </button>
-            </div>
-          </li>
+          <Todo name="Laundry" id="todo-1" completed={false} />
           {/* task 3 */}
-          <li>
-            {/* checkbox */}
-            <div>
-              <input type="checkbox" id="todo-2" />
-              <label htmlFor="todo-2">Sweep</label>
-            </div>
-            {/* update buttons: edit, delete */}
-            <div>
-              <button type="button">
-                Edit <span className="visually-hidden">Sweep</span>
-              </button>
-              <button type="button">
-                Delete <span className="visually-hidden">Sweep</span>
-              </button>
-            </div>
-          </li>
+          <Todo name="Sweep" id="todo-2" completed={false} />
         </ul>
       </form>
     </main>
