@@ -4,6 +4,10 @@ import FilterButton from "./components/FilterButton.js";
 import Todo from "./components/Todo.js";
 
 function App(props) {
+  // callback prop to get task input from form
+  function addTask(name) {
+    alert(name);
+  }
   // get tasks data from index.js
   const taskList = props.tasks.map((task) => (
     <Todo
@@ -17,7 +21,7 @@ function App(props) {
     <main>
       <h1>Todo App</h1>
       {/* form for user task input */}
-      <Form />
+      <Form addTask={addTask} />
       {/* filter buttons */}
       <div>
         {/* all tasks */}
