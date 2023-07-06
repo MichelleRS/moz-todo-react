@@ -16,6 +16,7 @@ function Form(props) {
     // clear input after submit
     setName("");
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="new-todo-input">What needs to be done?</label>
