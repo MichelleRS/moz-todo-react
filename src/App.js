@@ -1,4 +1,15 @@
-function App() {
+import Todo from "./components/Todo.js";
+
+function App(props) {
+  // get tasks data from index.js
+  const taskList = props.tasks.map((task) => (
+    <Todo
+      key={task.id}
+      id={task.id}
+      name={task.name}
+      completed={task.completed}
+    />
+  ));
   return (
     <main>
       <h1>Todo App</h1>
@@ -37,57 +48,7 @@ function App() {
         <h2>Tasks to Complete</h2>
         {/* list of tasks: list item with checkbox and update buttons */}
         <ul role="list" aria-labelledby="list-heading">
-          {/* task 1 */}
-          <li>
-            {/* checkbox */}
-            <div>
-              <input type="checkbox" id="todo-0" defaultChecked={true} />
-              <label htmlFor="todo-0">Groceries</label>
-            </div>
-            {/* update buttons: edit, delete */}
-            <div>
-              <button type="button">
-                Edit <span className="visually-hidden">Groceries</span>
-              </button>
-              <button type="button">
-                Delete <span className="visually-hidden">Groceries</span>
-              </button>
-            </div>
-          </li>
-          {/* task 2 */}
-          <li>
-            {/* checkbox */}
-            <div>
-              <input type="checkbox" id="todo-1" />
-              <label htmlFor="todo-1">Laundry</label>
-            </div>
-            {/* update buttons: edit, delete */}
-            <div>
-              <button type="button">
-                Edit <span className="visually-hidden">Laundry</span>
-              </button>
-              <button type="button">
-                Delete <span className="visually-hidden">Laundry</span>
-              </button>
-            </div>
-          </li>
-          {/* task 3 */}
-          <li>
-            {/* checkbox */}
-            <div>
-              <input type="checkbox" id="todo-2" />
-              <label htmlFor="todo-2">Sweep</label>
-            </div>
-            {/* update buttons: edit, delete */}
-            <div>
-              <button type="button">
-                Edit <span className="visually-hidden">Sweep</span>
-              </button>
-              <button type="button">
-                Delete <span className="visually-hidden">Sweep</span>
-              </button>
-            </div>
-          </li>
+          {taskList}
         </ul>
       </form>
     </main>
