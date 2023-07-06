@@ -1,4 +1,6 @@
+import React from "react";
 import Form from "./components/Form.js";
+import FilterButton from "./components/FilterButton.js";
 import Todo from "./components/Todo.js";
 
 function App(props) {
@@ -19,23 +21,11 @@ function App(props) {
       {/* filter buttons */}
       <div>
         {/* all tasks */}
-        <button type="button" aria-pressed="true">
-          <span className="visually-hidden">show</span>
-          <span>All</span>
-          <span className="visually-hidden">tasks</span>
-        </button>
-        {/* active tasks */}
-        <button type="button" aria-pressed="false">
-          <span className="visually-hidden">show</span>
-          <span>Active</span>
-          <span className="visually-hidden">tasks</span>
-        </button>
-        {/* completed tasks */}
-        <button type="button" aria-pressed="false">
-          <span className="visually-hidden">show</span>
-          <span>Completed</span>
-          <span className="visually-hidden">tasks</span>
-        </button>
+        <FilterButton />
+        {/* TODO active tasks */}
+        <FilterButton />
+        {/* TODO completed tasks */}
+        <FilterButton />
       </div>
       {/* TODO total tasks */}
       <h2>Tasks to Complete</h2>
