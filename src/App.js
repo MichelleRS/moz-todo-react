@@ -9,8 +9,7 @@ function App(props) {
 
   // callback prop to get and set task input from form
   function addTask(name) {
-    // TODO give each task a unique identifier
-    const newTask = { id: "id", name, completed: false };
+    const newTask = { id: crypto.randomUUID(), name, completed: false };
     setTasks([...tasks, newTask]);
   }
 
