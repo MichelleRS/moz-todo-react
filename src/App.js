@@ -13,6 +13,19 @@ function App(props) {
     setTasks([...tasks, newTask]);
   }
 
+  function toggleTaskCompleted(id) {
+    console.log("tasks[0]", tasks[0]);
+    const updatedTasks = tasks.map((task) => {
+      // if task has same ID as edited task
+      if (id === task.id) {
+        // use object spread to make a new object
+        // invert completed prop
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  }
   // get tasks data from index.js
   const taskList = tasks.map((task) => (
     <Todo
@@ -20,6 +33,7 @@ function App(props) {
       id={task.id}
       name={task.name}
       completed={task.completed}
+      toggleTaskCompleted={toggleTaskCompleted}
     />
   ));
 

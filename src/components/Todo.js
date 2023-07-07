@@ -5,7 +5,12 @@ function Todo(props) {
     <li>
       {/* checkbox */}
       <div>
-        <input type="checkbox" id={props.id} defaultChecked={props.completed} />
+        <input
+          type="checkbox"
+          id={props.id}
+          defaultChecked={props.completed}
+          onChange={() => props.toggleTaskCompleted(props.id)}
+        />
         <label htmlFor={props.id}>{props.name}</label>
       </div>
       {/* update buttons: edit, delete */}
