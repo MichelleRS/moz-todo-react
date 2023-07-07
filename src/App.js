@@ -13,6 +13,7 @@ function App(props) {
     setTasks([...tasks, newTask]);
   }
 
+  // toggle completed prop
   function toggleTaskCompleted(id) {
     console.log("tasks[0]", tasks[0]);
     const updatedTasks = tasks.map((task) => {
@@ -26,6 +27,14 @@ function App(props) {
     });
     setTasks(updatedTasks);
   }
+
+  // delete task
+  function deleteTask(id) {
+    //  exclude a task from the new array (remainingTasks) if its id prop matches the id argument passed into deleteTask()
+    const remainingTasks = tasks.filter((task) => id !== task.id);
+    setTasks(remainingTasks);
+  }
+
   // get tasks data from index.js
   const taskList = tasks.map((task) => (
     <Todo
@@ -33,7 +42,10 @@ function App(props) {
       id={task.id}
       name={task.name}
       completed={task.completed}
+      // callback prop for toggling completed
       toggleTaskCompleted={toggleTaskCompleted}
+      // callback prop to delete task
+      deleteTask={deleteTask}
     />
   ));
 

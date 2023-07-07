@@ -18,7 +18,7 @@ function Todo(props) {
         <button type="button">
           Edit <span className="visually-hidden">{props.name}</span>
         </button>
-        <button type="button">
+        <button type="button" onClick={() => props.deleteTask(props.id)}>
           Delete <span className="visually-hidden">{props.name}</span>
         </button>
       </div>
