@@ -12,7 +12,7 @@ function Todo(props) {
       </div>
       {/* button group */}
       <div>
-        <button type="button">
+        <button type="button" onClick={() => setEditing(false)}>
           Cancel <span className="visually-hidden">renaming {props.name}</span>
         </button>
         <button type="submit">
@@ -36,7 +36,7 @@ function Todo(props) {
       </div>
       {/* button group */}
       <div>
-        <button type="button">
+        <button type="button" onClick={() => setEditing(true)}>
           Edit <span className="visually-hidden">{props.name}</span>
         </button>
         <button type="button" onClick={() => props.deleteTask(props.id)}>
@@ -46,29 +46,7 @@ function Todo(props) {
     </div>
   );
 
-  return (
-    <li>
-      {/* checkbox */}
-      <div>
-        <input
-          type="checkbox"
-          id={props.id}
-          defaultChecked={props.completed}
-          onChange={() => props.toggleTaskCompleted(props.id)}
-        />
-        <label htmlFor={props.id}>{props.name}</label>
-      </div>
-      {/* update buttons: edit, delete */}
-      <div>
-        <button type="button">
-          Edit <span className="visually-hidden">{props.name}</span>
-        </button>
-        <button type="button" onClick={() => props.deleteTask(props.id)}>
-          Delete <span className="visually-hidden">{props.name}</span>
-        </button>
-      </div>
-    </li>
-  );
+  return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
 }
 
 export default Todo;
