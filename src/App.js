@@ -60,7 +60,7 @@ function App(props) {
   }
 
   // get tasks data from index.js
-  const taskList = tasks.map((task) => (
+  const taskList = tasks.filter(FILTER_MAP[filter]).map((task) => (
     <Todo
       key={task.id}
       id={task.id}
