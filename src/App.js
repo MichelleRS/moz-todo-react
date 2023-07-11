@@ -37,7 +37,7 @@ function App(props) {
 
   // edit task
   function editTask(id, newName) {
-    const editedTaskList = tasks.mpa((task) => {
+    const editedTaskList = tasks.map((task) => {
       // check for tasks that match the id of the task being edited
       if (id === task.id) {
         // add task to new array
