@@ -75,20 +75,23 @@ function App(props) {
     />
   ));
 
+  // initialize variable for list of filter names
+  const filterList = FILTER_NAMES.map((name) => (
+    <FilterButton
+      key={name}
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}
+    />
+  ));
+
   return (
     <main>
       <h1>Todo App</h1>
       {/* form for user task input */}
       <Form addTask={addTask} />
       {/* filter buttons */}
-      <div>
-        {/* all tasks */}
-        <FilterButton />
-        {/* TODO active tasks */}
-        <FilterButton />
-        {/* TODO completed tasks */}
-        <FilterButton />
-      </div>
+      <div>{filterList}</div>
       {/* TODO total tasks */}
       <h2>Tasks to Complete</h2>
       {/* list of tasks: list item with checkbox and update buttons */}
