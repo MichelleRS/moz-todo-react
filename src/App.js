@@ -3,9 +3,20 @@ import Form from "./components/Form.js";
 import FilterButton from "./components/FilterButton.js";
 import Todo from "./components/Todo.js";
 
+// object to store filter names and behavior
+const FILTER_MAP = {
+  All: () => true,
+  Active: (task) => !task.completed,
+  Completed: (task) => task.completed,
+};
+// collect array of filter names from FILTER_MAP
+const FILTER_NAMES = Object.keys(FILTER_MAP);
+
 function App(props) {
   // pass props.task from index.js into useState() hook to set its initial state
   const [tasks, setTasks] = useState(props.tasks);
+  // hook for filter state
+  const [filter, setFilter] = useState("All");
 
   // callback prop to get and set task input from form
   function addTask(name) {
