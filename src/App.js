@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import Form from "./components/Form.js";
 import FilterButton from "./components/FilterButton.js";
 import Todo from "./components/Todo.js";
+import { useRef } from "react";
+import { useEffect } from "react";
+
+// custom hook: get previous value
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
 
 // object to store filter names and behavior
 const FILTER_MAP = {
@@ -85,6 +96,19 @@ function App(props) {
     />
   ));
 
+  // initialize reference for focus management of heading
+  const listHeadingRef = useRef(null);
+  // initialize variable to store previous tasks by tracking the length of the tasks state
+  const prevTaskLength = usePrevious(tasks.length);
+
+  // put focus on task list heading when user deletes a task
+  useEffect(() => {
+    // if there are fewer tasks in list, put focus on task list heading
+    if (tasks.length - prevTaskLength === -1) {
+      listHeadingRef.current.focus();
+    }
+  }, [tasks.length, prevTaskLength]);
+
   return (
     <main>
       <h1>Todo App</h1>
@@ -93,7 +117,9 @@ function App(props) {
       {/* filter buttons */}
       <div>{filterList}</div>
       {/* TODO total tasks */}
-      <h2>Tasks to Complete</h2>
+      <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
+        Tasks to Complete
+      </h2>
       {/* list of tasks: list item with checkbox and update buttons */}
       <ul role="list" aria-labelledby="list-heading">
         {taskList}
