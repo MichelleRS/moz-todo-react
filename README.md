@@ -15,7 +15,9 @@ User can read a list of tasks. With a mouse or keyboard, user can:
 
 ## Project Status
 
-- MVP in progress
+- MVP complete
+- Managing focusing complete
+- TODO: CSS
 
 ## Project Setup
 
@@ -45,10 +47,14 @@ $ npm start
 
 ### Setup Resources
 
-[_Adding locally hosted code to GitHub._](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git) GitHub. Accessed July 2023.
+- [_Adding locally hosted code to GitHub._](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git) GitHub. Accessed July 2023.
 
-[_Getting started with React: Initializing your app._](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started#initializing_your_app) MDN Web Docs. Accessed July 2023.
+- [_Getting started with React: Initializing your app._](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started#initializing_your_app) MDN Web Docs. Accessed July 2023.
 
 ## Project Resources
 
-[_React Guide._](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started) MDN Web Docs. Accessed July 2023.
+- [_React Guide._](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started) MDN Web Docs. Accessed July 2023.
+
+### Accessibility
+
+- [_Inclusively Hidden_](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html) by Scott O'Hara. April 14, 2017.
