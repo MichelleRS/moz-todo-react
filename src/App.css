@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* placeholder style */
+  background-color: var(--lightNeutral);
+  padding: 5rem;
+}
+/* start of button styles */
+.btn {
+  font-size: 1rem;
+  /* scale padding with font size */
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+}
+.btn + .btn {
+  /* add space between buttons */
+  margin-left: 1rem;
+}
+.btn-primary {
+  background: var(--darkNeutral);
+  color: var(--lightNeutral);
+  border: 2px solid var(--darkNeutral);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--lightNeutral);
+  color: var(--darkNeutral);
+  border: 2px solid var(--darkNeutral);
+}
+.btn-secondary {
+  background: var(--lightNeutral);
+  color: var(--darkNeutral);
+  border: 2px solid var(--darkNeutral);
+}
+.warning:hover,
+.warning:focus,
+.warning:active {
+  color: var(--red);
+  text-decoration: underline;
+  border: 2px solid var(--red);
+}

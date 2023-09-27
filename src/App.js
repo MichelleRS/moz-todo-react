@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useState } from "react";
 import Form from "./components/Form.js";
 import FilterButton from "./components/FilterButton.js";
@@ -121,7 +122,11 @@ function App(props) {
         Tasks to Complete
       </h2>
       {/* list of tasks: list item with checkbox and update buttons */}
-      <ul role="list" aria-labelledby="list-heading">
+      <ul
+        role="list"
+        aria-labelledby="list-heading"
+        className="taskListContainer"
+      >
         {taskList}
       </ul>
     </main>
