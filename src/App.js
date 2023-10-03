@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useState } from "react";
 import Form from "./components/Form.js";
 import FilterButton from "./components/FilterButton.js";
@@ -110,21 +111,36 @@ function App(props) {
   }, [tasks.length, prevTaskLength]);
 
   return (
-    <main>
-      <h1>Todo App</h1>
-      {/* form for user task input */}
-      <Form addTask={addTask} />
-      {/* filter buttons */}
-      <div>{filterList}</div>
-      {/* TODO total tasks */}
-      <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
-        Tasks to Complete
-      </h2>
-      {/* list of tasks: list item with checkbox and update buttons */}
-      <ul role="list" aria-labelledby="list-heading">
-        {taskList}
-      </ul>
-    </main>
+    <>
+      <header>
+        <h1>Todo App</h1>
+      </header>
+      <main>
+        <section>
+          {/* form for user task input */}
+          <Form addTask={addTask} />
+        </section>
+        <section className="tasks-container">
+          {/* TODO total tasks */}
+          <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
+            Tasks to Complete
+          </h2>
+          <div className="filter-toolbar">
+            <p>Task Filters:</p>
+            {/* filter buttons */}
+            <div className="filter-buttons">{filterList}</div>
+          </div>
+          {/* list of tasks: list item with checkbox and update buttons */}
+          <ul
+            role="list"
+            aria-labelledby="list-heading"
+            className="taskListContainer"
+          >
+            {taskList}
+          </ul>
+        </section>
+      </main>
+    </>
   );
 }
 

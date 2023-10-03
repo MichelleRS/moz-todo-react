@@ -1,0 +1,53 @@
+.taskListContainer {
+  /* margin: 0 auto; */
+  /* placeholder styles */
+  /* background-color: magenta; */
+  width: 50vw;
+}
+.todo {
+  list-style: none;
+  background-color: var(--lightNeutral);
+  padding: 1rem;
+  border: 2px solid var(--darkNeutral);
+  border-radius: 0.5rem;
+}
+.todo + .todo {
+  /* add space between todos stacked vertically */
+  margin-top: 1rem;
+}
+.todo-control {
+  margin-bottom: 0.75rem;
+}
+.todo-btn-group {
+  /* placeholder style */
+  /* border: 1px solid aqua; */
+}
+
+/* start of view template styles */
+.todo-view-control {
+  font-size: 1.5rem;
+}
+.todo-view-label {
+  margin-left: 0.75rem;
+  /* placeholder styles */
+  /* background-color: lightblue; */
+}
+input[type="checkbox"] {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* start of edit template styles */
+.todo-edit-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  /* placeholder style */
+  /* background-color: green; */
+}
+.todo-control > input[type="text"] {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 2px solid var(--darkNeutral);
+  background-color: var(--lightNeutral);
+}
