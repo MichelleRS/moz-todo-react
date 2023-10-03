@@ -5,17 +5,75 @@
   margin: 0;
   padding: 0;
 }
-body {
+/* app container */
+#root {
+  margin: 0 auto;
   /* placeholder style */
-  background-color: var(--lightNeutral);
-  padding: 5rem;
+  /* background-color: gold; */
 }
-/* start of button styles */
+header > h1 {
+  margin-bottom: 1rem;
+}
+/* start of add task form */
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* placeholder style */
+  /* background-color: orange; */
+}
+.add-task-form > label {
+  margin-bottom: 0.5rem;
+  /* placeholder style */
+  /* background-color: red; */
+}
+.add-task-input-wrapper {
+  display: flex;
+  gap: 1rem;
+  /* placeholder style */
+  /* background-color: violet; */
+}
+.add-task-input-wrapper > input[type="text"] {
+  width: 80%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--darkNeutral);
+  background-color: var(--lightNeutral);
+}
+.add-task-input-wrapper > button {
+  width: 20%;
+}
+.filter-toolbar {
+  margin: 1rem 0;
+}
+.filter-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.filter-buttons > .btn {
+  width: 100%;
+}
+
+/* start of tasks */
+.tasks-container > h2 {
+  margin-top: 1rem;
+  /* placeholder style */
+  /* background-color: yellow; */
+}
+
+/* start of all button styles */
 .btn {
   font-size: 1rem;
   /* scale padding with font size */
   padding: 0.5em 0.75em;
   border-radius: 0.25em;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  text-decoration: underline;
 }
 .btn + .btn {
   /* add space between buttons */

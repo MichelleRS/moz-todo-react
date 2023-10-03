@@ -18,17 +18,21 @@ function Form(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="add-task-form">
       <label htmlFor="new-todo-input">What needs to be done?</label>
-      <input
-        type="text"
-        id="new-todo-input"
-        name="text"
-        autoComplete="off"
-        value={name}
-        onChange={handleChange}
-      ></input>
-      <button type="submit">Add</button>
+      <div className="add-task-input-wrapper">
+        <input
+          type="text"
+          id="new-todo-input"
+          name="text"
+          autoComplete="off"
+          value={name}
+          onChange={handleChange}
+        ></input>
+        <button type="submit" className="btn btn-primary">
+          Add
+        </button>
+      </div>
     </form>
   );
 }
